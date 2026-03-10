@@ -1,9 +1,9 @@
 # Skill: capture_screenshot
 
-Use this skill when the user asks to capture a screenshot of a webpage.
+Use this skill when the user asks to take a screenshot of the webpage.
 
-This skill captures a full-page screenshot using Playwright.
+This skill uses the Playwright MCP `screenshot` tool.
 
-The screenshot should be saved to:
+Expected output file:
 
 outputs/screenshots/page.png

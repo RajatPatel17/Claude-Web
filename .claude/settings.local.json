@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:en.wikipedia.org)",
+      "Bash(curl -s -L -A \"Mozilla/5.0\" \"https://en.wikipedia.org/wiki/Supply_and_demand\")",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/91.0.4472.124 Safari/537.36\" \"https://en.wikipedia.org/wiki/Supply_and_demand\" | head -500)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/91.0.4472.124 Safari/537.36\" \"https://en.wikipedia.org/wiki/Supply_and_demand\" | grep -A 5000 '<div class=\"mw-parser-output\">' | head -6000 | sed 's/<[^>]*>//g' | tr -s '\\\\n' '\\\\n' | sed 's/\\\\[edit\\\\]//g' | head -2000)",
+      "Bash(grep -A 5000 'mw-parser-output' /tmp/wikipedia.html | head -6000 | sed 's/<[^>]*>//g' | tr -s '\\\\n' '\\\\n' | sed 's/\\\\[edit\\\\]//g' | sed 's/  / /g' | grep -v '^\\\\s*$' | head -300)",
+      "Bash(sed 's/<[^>]*>//g')",
+      "Bash(cat /tmp/wikipedia.html | lynx -dump -stdin 2>/dev/null | head -500)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Supply-demand-equilibrium.svg/1200px-Supply-demand-equilibrium.svg.png\" -o \"outputs/screenshots/supply-demand-equilibrium.png\" 2>/dev/null && echo \"Downloaded supply-demand diagram\")",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Supply-demand-equilibrium.svg/1200px-Supply-demand-equilibrium.svg.png\" -o \"outputs/screenshots/supply_demand_equilibrium.png\" 2>/dev/null && ls -la outputs/screenshots/)"
+    ]
+  }
+}

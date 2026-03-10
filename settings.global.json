@@ -1,0 +1,20 @@
+{
+  "autoUpdatesChannel": "latest",
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-playwright"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/Users/patel/claude-web-agent"
+      ]
+    }
+  }
+}
